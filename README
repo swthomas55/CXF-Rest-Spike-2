@@ -1,0 +1,4 @@
+Another attempt at a CXF/Spring based Rest service, starting from
+https://cwiki.apache.org/CXF20DOC/jax-rs-maven-plugins.html
+
+This one works.
