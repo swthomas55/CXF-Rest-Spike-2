@@ -1,0 +1,4 @@
+GET http://localhost:13000/jaxrs-service/hello/jsonBean HTTP/1.0
+Accept: application/json
+
+
