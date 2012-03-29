@@ -1,4 +1,25 @@
 Another attempt at a CXF/Spring based Rest service, starting from
 https://cwiki.apache.org/CXF20DOC/jax-rs-maven-plugins.html
 
-This one works.
+Wrap the return bean in a Resource with Links.
+
+Added index.html so I can play with the primitive HATEOAS nature thus revealed.
+
+New questions:
+
+The Link URLs replicate path information from
+* The servlet context
+* The class Path
+This is not good (not DRY at least). What power tools are available (via Spring) to get the correct path prefixes at run time?
+
+For building a reflective web interface on these HATEOAS messages, what is a good tool? (Backbone, maybe)
+
+
+Actions revealed here:
+
+get /
+click on "Get a bean" button. The val1 and val2 values are displayed. Each time you get a new bean, the values increment.
+Note that the bean value list has 2 links:
+"echo" just runs the echo service, but
+"copy" posts the bean values back to the server, copying the first value to the second
+

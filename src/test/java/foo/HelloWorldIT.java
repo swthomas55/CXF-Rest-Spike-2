@@ -12,6 +12,7 @@ import org.apache.cxf.helpers.IOUtils;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.MappingJsonFactory;
+import org.ithaka.sthomas.cxfRestSpike2.JsonBean;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
