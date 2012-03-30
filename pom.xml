@@ -40,11 +40,11 @@
     </dependencies>
     <build>
 	   <extensions>
-	      <extension>
+	      <!-- <extension>
 	        <groupId>org.codehaus.mojo</groupId>
 	        <artifactId>javascript-maven-plugin</artifactId>
 	        <version>2.0.0-SNAPSHOT</version>
-	      </extension>
+	      </extension> -->
 	    </extensions>
         <pluginManagement>
             <plugins>
@@ -199,11 +199,11 @@
 	            <configuration>
 	                <webAppConfig>
 	                    <contextPath>/</contextPath>
-	                    <resourceBases>
+	                    <!-- <resourceBases>
 	                        <resourceBase>target/classes</resourceBase>
 	                        <resourceBase>target/test-classes</resourceBase>
 	                        <resourceBase>src/main/webapp</resourceBase>
-	                    </resourceBases>
+	                    </resourceBases> -->
 	                </webAppConfig>
 	            </configuration>
 	        </plugin>

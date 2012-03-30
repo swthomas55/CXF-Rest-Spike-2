@@ -38,4 +38,5 @@ function postABean(href, data) {
 	xq = $.ajax(href, {contentType: "application/json", data : postdata, dataType : "json", type: "POST"});
 	xq.done(beanResponse);
 }
-$('#getABean').click(getABean);
+
+$(function () {$('#getABean').click(getABean)});
