@@ -1,4 +1,9 @@
 // Trying to connect Backbone to ajax server
+
+// global vars for debugging.
+var items;
+var views = [];
+
 (function($) {
     // stub sync function.
     // Backbone.sync = function(method, model, success, error) {
@@ -117,7 +122,7 @@
         initialize: function() {
             _.bindAll(this, 'render', 'addResource', 'appendResource');
             // remember: every function that uses 'this' as the current object should be in here
-            this.collection = new ResourceList();
+            items = this.collection = new ResourceList();
             this.collection.bind('add', this.appendResource);
             // collection event binder
             this.counter = 0;
@@ -128,7 +133,7 @@
 
         render: function() {
             $(this.el).append("<button id='add'>Add list item</button>");
-            $(this.el).append("<ul></ul>");
+            $(this.el).append("<ul id='listView'></ul>");
             _(this.collection.models).each(function(item) {
                 // in case collection is not empty
                 self.appendResource(item);
@@ -138,10 +143,10 @@
 
         addResource: function() {
             this.counter++;
-            // this.collection.fetch();
+            var coll = this;
             var item = new Resource();
-            item.fetch();
-            this.collection.add(item);
+            item.fetch({success: function() {coll.collection.add(item);}});
+
             // add item to collection; view is updated via event 'add'
         },
 
@@ -149,12 +154,11 @@
             var itemView = new ResourceView({
                 model: item
             });
-            $('ul', this.el).append(itemView.render().el);
+            this.$("#listView").append(itemView.render().el);
+            views.push(itemView);
         }
 
     });
-
-    items = new ResourceList();
 
 
     var listView = new ListView();
